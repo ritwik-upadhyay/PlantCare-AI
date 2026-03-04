@@ -23,7 +23,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(os.path.join(STATIC_FOLDER, "images"), exist_ok=True)
 
 # Load trained model
-model = load_model("model_fixed.h5", compile=False)
+model = load_model("mobilenetv2_best.keras", compile=False)
 
 LABELS_PATH = "labels.txt"
 
