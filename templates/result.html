@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Analysis Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="fade-up navbar"
+        style="display:flex;justify-content:space-between;padding:18px 60px;border-bottom:1px solid #ddd;">
+        <div style="display:flex;align-items:center;gap:10px;font-weight:bold;color:#2bb673;">
+            <div
+                style="width:28px;height:28px;border-radius:50%;background:#e9f7f2;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(43,182,115,0.2);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 13c4.5-6 11-7 14-7-1 6-5 12-12 12-1.5 0-2-.5-2-1.5 0-1 .5-2.5 0-3.5z" fill="#2bb673" />
+                    <path d="M7 17c3-3 7-5 12-6" stroke="#1f8a57" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+            </div>
+            PlantCare AI
+        </div>
+
+        <div>
+            <a href="/" style="text-decoration:none;color:#333;">Home</a>
+            <a href="/upload" style="margin-left:20px;text-decoration:none;color:#333;">New Analysis</a>
+        </div>
+    </div>
+
+    <div class="fade-up section" style="text-align:center;">
+
+        <h1>Analysis Complete</h1>
+        <p>Here’s what we found</p>
+
+        <div
+            style="display:flex;justify-content:center;gap:40px;margin-top:40px;align-items:flex-start;flex-wrap:wrap;">
+
+            <div>
+                <h3>Uploaded Image</h3>
+                <img src="{{ url_for('static', filename=image_path) }}"
+                    style="width:300px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+            </div>
+
+            <div class="card" style="padding:28px;min-width:320px;max-width:360px;">
+
+                <div style="display:flex;justify-content:center;margin-bottom:12px;">
+                    <div
+                        style="padding:6px 14px;border-radius:999px;font-size:12px;font-weight:bold;letter-spacing:0.5px;{{ 'background:#e8f7f0;color:#1e8e5a;border:1px solid #bfe9d3;' if is_healthy else 'background:#fdecec;color:#c0392b;border:1px solid #f3b6b6;' }}">
+                        {{ status | upper }}
+                    </div>
+                </div>
+
+                <div style="display:flex;justify-content:center;align-items:center;margin:14px 0 20px;">
+                    <div
+                        style="width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:bold;{{ 'border:3px solid #2bb673;color:#2bb673;' if is_healthy else 'border:3px solid #e74c3c;color:#e74c3c;' }}">
+                        {{ '✓' if is_healthy else '✕' }}
+                    </div>
+                </div>
+
+                <div style="background:#f7faf9;border-radius:10px;padding:14px;margin-bottom:12px;">
+                    <div style="font-size:11px;color:#777;letter-spacing:0.6px;">PLANT TYPE</div>
+                    <div style="font-size:18px;font-weight:bold;margin-top:6px;">{{ plant_type }}</div>
+                </div>
+
+                <div style="background:#f7faf9;border-radius:10px;padding:14px;margin-bottom:16px;">
+                    <div style="font-size:11px;color:#777;letter-spacing:0.6px;">CONDITION</div>
+                    <div
+                        style="font-size:16px;font-weight:bold;margin-top:6px;{{ 'color:#2bb673;' if is_healthy else 'color:#e74c3c;' }}">
+                        {{ condition }}</div>
+                </div>
+
+                <div
+                    style="{{ 'background:#eaf7f1;border:1px solid #bfe9d3;' if is_healthy else 'background:#fdecec;border:1px solid #f3b6b6;' }} border-radius:10px;padding:14px;text-align:left;">
+                    <div
+                        style="font-weight:bold;margin-bottom:8px;{{ 'color:#1e8e5a;' if is_healthy else 'color:#c0392b;' }}">
+                        {{ 'Keep Your Plant Healthy' if is_healthy else 'Recommended Actions' }}
+                    </div>
+                    <ul style="margin:0;padding-left:18px;color:#555;font-size:13px;line-height:1.5;">
+                        {% for tip in tips %}
+                        <li>{{ tip }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                {% if confidence is not none %}
+                <p style="color:#777;margin-top:12px;font-size:12px;">Confidence: {{ (confidence * 100) | round(1) }}%
+                </p>
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div style="margin-top:30px;display:flex;gap:12px;justify-content:center;">
+            <a href="/upload">
+                <button class="btn btn-primary shine" style="padding:11px 24px;">Analyze Another Image</button>
+            </a>
+            <a href="/">
+                <button class="btn btn-secondary" style="padding:11px 24px;">Back to Home</button>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Smart Bridge Hyderabad<br>
+        © 2026 Smart Bridge Hyderabad. All rights reserved.
+    </div>
+
+    <script>
+        const els = document.querySelectorAll('.fade-up');
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+        }, { threshold: 0.15 });
+        els.forEach(el => io.observe(el));
+    </script>
+</body>
+
+</html>

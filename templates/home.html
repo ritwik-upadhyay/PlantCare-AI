@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PlantCare AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="fade-up navbar" style="display:flex;justify-content:space-between;padding:18px 60px;border-bottom:1px solid #ddd;">
+        <div style="display:flex;align-items:center;gap:10px;font-weight:bold;color:#2bb673;">
+            <div style="width:28px;height:28px;border-radius:50%;background:#e9f7f2;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(43,182,115,0.2);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M5 13c4.5-6 11-7 14-7-1 6-5 12-12 12-1.5 0-2-.5-2-1.5 0-1 .5-2.5 0-3.5z" fill="#2bb673"/>
+                    <path d="M7 17c3-3 7-5 12-6" stroke="#1f8a57" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            PlantCare AI
+        </div>
+
+        <div>
+            <a href="/" style="margin-right:20px;text-decoration:none;color:#333;">Home</a>
+            <a href="/about" style="margin-right:20px;text-decoration:none;color:#333;">About</a>
+            <a href="/upload">
+                <button class="btn btn-primary shine" style="padding:9px 20px;">Get Started</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="fade-up section" style="display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;">
+
+        <div style="max-width:500px;">
+            <h1 style="font-size:42px;">AI-Powered<br>Plant Disease Detection</h1>
+
+            <p style="color:#555;">
+                Protect your crops with cutting-edge artificial intelligence.
+                Upload a plant leaf image and instantly detect diseases.
+            </p>
+
+            <br>
+
+            <a href="/upload">
+                <button class="btn btn-primary shine">Upload Image</button>
+            </a>
+
+            <a href="/about">
+                <button class="btn btn-secondary" style="margin-left:10px;">Learn More</button>
+            </a>
+
+        </div>
+
+        <div class="float card" style="width:360px;height:360px;position:relative;overflow:hidden;background:linear-gradient(135deg,#e9f7f2,#fef6e8);">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;opacity:0.95;">
+            <div style="position:absolute;bottom:14px;left:14px;background:white;padding:10px 12px;border-radius:10px;font-size:12px;box-shadow:0 4px 14px rgba(0,0,0,0.12);">
+                <div style="font-weight:bold;color:#2bb673;">AI Scan</div>
+                <div style="color:#666;">Detects 38 diseases</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="fade-up section" style="text-align:center;">
+
+        <h2>Why Choose PlantCare AI?</h2>
+
+        <div class="feature-grid" style="margin-top:24px;">
+
+            <div class="feature-card">
+                <div class="icon-pill">FAST</div>
+                <h4>Instant Detection</h4>
+                <p style="font-size:14px;color:#5f6e66;">Get results in seconds using AI.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-pill">HQ</div>
+                <h4>High Accuracy</h4>
+                <p style="font-size:14px;color:#5f6e66;">Powered by MobileNetV2 deep learning.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-pill">EZ</div>
+                <h4>Easy To Use</h4>
+                <p style="font-size:14px;color:#5f6e66;">Upload an image and detect disease instantly.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- HOW IT WORKS -->
+    <div class="fade-up section" style="text-align:center;">
+        <h2>How It Works</h2>
+        <p style="color:#5f6e66;">Three simple steps from photo to diagnosis.</p>
+        <div class="how-grid" style="margin-top:24px;">
+            <div class="how-step">
+                <div class="icon-pill">1</div>
+                <h4>Capture</h4>
+                <p style="font-size:14px;color:#5f6e66;">Take a clear photo of the affected leaf.</p>
+            </div>
+            <div class="how-step">
+                <div class="icon-pill">2</div>
+                <h4>Analyze</h4>
+                <p style="font-size:14px;color:#5f6e66;">Our AI model processes the image.</p>
+            </div>
+            <div class="how-step">
+                <div class="icon-pill">3</div>
+                <h4>Act</h4>
+                <p style="font-size:14px;color:#5f6e66;">Get the condition and next steps.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="fade-up section" style="background:#e9f7f2;text-align:center;">
+
+        <div class="trust-strip">
+
+            <div class="trust-item">
+                <h2 style="color:#2bb673;">38+</h2>
+                <p>Plant Diseases</p>
+            </div>
+
+            <div class="trust-item">
+                <h2 style="color:#2bb673;">95%</h2>
+                <p>Accuracy Rate</p>
+            </div>
+
+            <div class="trust-item">
+                <h2 style="color:#2bb673;">10+</h2>
+                <p>Plant Species</p>
+            </div>
+
+            <div class="trust-item">
+                <h2 style="color:#2bb673;">24/7</h2>
+                <p>Available</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section-divider"></div>
+
+    <div class="fade-up section" style="text-align:center;">
+        <h3>Ready to scan your plant?</h3>
+        <p style="color:#5f6e66;">Upload a photo and get instant insight.</p>
+        <a href="/upload">
+            <button class="btn btn-primary shine">Start Analysis</button>
+        </a>
+    </div>
+
+    <div class="footer">
+        Smart Bridge Hyderabad<br>
+        © 2026 Smart Bridge Hyderabad. All rights reserved.
+    </div>
+<script>
+    const els = document.querySelectorAll('.fade-up');
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.15 });
+    els.forEach(el => io.observe(el));
+</script>
+</body>
+
+</html>

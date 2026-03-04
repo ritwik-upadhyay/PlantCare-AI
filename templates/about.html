@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About PlantCare AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="/static/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="fade-up navbar" style="display:flex;justify-content:space-between;padding:18px 60px;border-bottom:1px solid #ddd;">
+<div style="display:flex;align-items:center;gap:10px;font-weight:bold;color:#2bb673;">
+    <div style="width:28px;height:28px;border-radius:50%;background:#e9f7f2;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(43,182,115,0.2);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 13c4.5-6 11-7 14-7-1 6-5 12-12 12-1.5 0-2-.5-2-1.5 0-1 .5-2.5 0-3.5z" fill="#2bb673"/>
+            <path d="M7 17c3-3 7-5 12-6" stroke="#1f8a57" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+    </div>
+    PlantCare AI
+</div>
+
+<div>
+<a href="/" style="margin-right:20px;text-decoration:none;color:#333;">Home</a>
+<a href="/about" style="margin-right:20px;text-decoration:none;color:#333;">About</a>
+<a href="/upload">
+<button class="btn btn-primary shine" style="padding:9px 20px;">Start Analysis</button>
+</a>
+</div>
+</div>
+
+<div class="fade-up section" style="text-align:center;">
+<h1>About Our Technology</h1>
+<p style="color:#666;">Transforming agriculture with artificial intelligence</p>
+</div>
+
+<div class="fade-up section" style="display:flex;justify-content:center;gap:60px;flex-wrap:wrap;">
+
+<div style="max-width:400px;">
+<h2>Our Mission</h2>
+
+<p style="color:#555;">
+We help farmers detect plant diseases early using AI technology. 
+Our goal is to improve crop productivity and support sustainable agriculture.
+</p>
+</div>
+
+<div class="card" style="padding:30px;">
+
+<h3>Our AI Model</h3>
+
+<p>Architecture: MobileNetV2</p>
+<p>Training Data: Thousands of leaf images</p>
+<p>Coverage: 38+ plant diseases</p>
+
+</div>
+
+</div>
+
+<div class="footer">
+Smart Bridge Hyderabad<br>
+© 2026 Smart Bridge Hyderabad. All rights reserved.
+</div>
+
+<script>
+    const els = document.querySelectorAll('.fade-up');
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.15 });
+    els.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

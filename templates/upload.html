@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload Plant Image</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="/static/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="fade-up navbar" style="display:flex;justify-content:space-between;padding:18px 60px;border-bottom:1px solid #ddd;">
+<div style="display:flex;align-items:center;gap:10px;font-weight:bold;color:#2bb673;">
+<div style="width:28px;height:28px;border-radius:50%;background:#e9f7f2;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(43,182,115,0.2);">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+<path d="M5 13c4.5-6 11-7 14-7-1 6-5 12-12 12-1.5 0-2-.5-2-1.5 0-1 .5-2.5 0-3.5z" fill="#2bb673"/>
+<path d="M7 17c3-3 7-5 12-6" stroke="#1f8a57" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+</div>
+PlantCare AI
+</div>
+
+<div>
+<a href="/" style="text-decoration:none;color:#333;">Home</a>
+<a href="/about" style="margin-left:20px;text-decoration:none;color:#333;">About</a>
+</div>
+</div>
+
+<div class="fade-up section" style="text-align:center;">
+
+<h1>Upload Plant Image</h1>
+
+<p style="color:#666;">Take or upload a clear photo of the affected plant leaf</p>
+
+<br>
+
+<div class="card" style="padding:40px;width:420px;margin:auto;">
+
+{% if error %}
+<div style="background:#ffecec;color:#c0392b;padding:10px 12px;border-radius:6px;margin-bottom:16px;font-size:14px;">
+{{ error }}
+</div>
+{% endif %}
+
+<form action="/predict" method="POST" enctype="multipart/form-data">
+
+<input type="file" name="file" required>
+
+<br><br>
+
+<button class="btn btn-primary shine" style="padding:11px 24px;">Analyze Image</button>
+
+</form>
+
+</div>
+
+</div>
+
+<div class="footer">
+Smart Bridge Hyderabad<br>
+© 2026 Smart Bridge Hyderabad. All rights reserved.
+</div>
+
+<script>
+    const els = document.querySelectorAll('.fade-up');
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.15 });
+    els.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
