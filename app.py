@@ -46,7 +46,7 @@ def predict_image(img_path):
     img_array = np.expand_dims(img_array, axis=0)
     img_array = img_array / 255.0
 
-    prediction = model.predict(img_array)
+    prediction = model.predict(img_array, verbose=0)
     class_index = np.argmax(prediction)
 
     confidence = float(np.max(prediction))
