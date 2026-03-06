@@ -193,13 +193,177 @@ This project was developed as part of the SmartBridge Experiential Learning Prog
 
 This project is intended for educational and research purposes.
 
+📂 Project Development Files (As Per Templates)
+
+The PlantCare AI project follows a structured directory layout to separate the frontend, backend, model, and documentation components. Each file plays a specific role in the development and execution of the application.
+
 ⸻
 
-If you want, I can also give you a much more impressive GitHub README with:
-	•	📸 UI screenshots
-	•	🧠 Model training graphs
-	•	📊 Accuracy metrics
-	•	🧾 badges
-	•	🧩 GitHub project cards
+Backend Files
 
-That version looks 10× more impressive when recruiters or professors open the repo.
+app.py
+
+This is the main Flask application file.
+It performs the following functions:
+	•	Loads the trained MobileNetV2 model
+	•	Handles HTTP routes
+	•	Processes image uploads
+	•	Preprocesses images before prediction
+	•	Sends the image to the deep learning model
+	•	Returns prediction results to the frontend
+
+This file acts as the bridge between the web interface and the AI model.
+
+⸻
+
+Model Files
+
+mobilenetv2_best.keras
+
+This file contains the trained deep learning model used for plant disease detection.
+
+Key details:
+	•	Architecture: MobileNetV2
+	•	Framework: TensorFlow / Keras
+	•	Training method: Transfer Learning
+	•	Purpose: Predict disease classes from plant leaf images.
+
+⸻
+
+labels.txt
+
+This file contains the class labels used by the model.
+
+Example:
+
+Healthy
+Tomato Early Blight
+Tomato Late Blight
+Tomato Leaf Mold
+
+The model outputs numerical predictions which are mapped to readable disease names using this file.
+
+⸻
+
+Frontend Templates
+
+The templates folder contains the HTML pages used for the web interface.
+
+templates/home.html
+	•	Landing page of the application
+	•	Introduces the PlantCare AI system
+	•	Provides navigation to the upload page
+
+⸻
+
+templates/upload.html
+	•	Allows users to upload plant leaf images
+	•	Sends the uploaded image to the Flask backend for prediction
+
+⸻
+
+templates/result.html
+	•	Displays the prediction result
+	•	Shows the predicted plant disease or healthy status
+
+⸻
+
+templates/about.html
+	•	Provides information about the project
+	•	Describes the purpose and background of PlantCare AI
+
+⸻
+
+Static Files
+
+static/styles.css
+
+This file contains the CSS styling used for the frontend pages.
+
+It controls:
+	•	Layout
+	•	Fonts
+	•	Colors
+	•	UI styling
+	•	Page responsiveness
+
+⸻
+
+Documentation Files
+
+docs/generate_technical_pdf.py
+
+This script is used to generate the technical documentation PDF for the project.
+
+It automatically creates a structured document containing:
+	•	Project overview
+	•	Architecture
+	•	Model explanation
+	•	Workflow
+	•	Future improvements
+
+⸻
+
+Dependency Management
+
+requirements.txt
+
+This file contains all the Python dependencies required to run the project.
+
+Example libraries:
+
+Flask
+TensorFlow
+Keras
+NumPy
+Pillow
+
+Users can install all dependencies using:
+
+pip install -r requirements.txt
+
+
+⸻
+
+Configuration Files
+
+.gitignore
+
+Specifies files that should not be uploaded to GitHub, such as:
+	•	cache files
+	•	system files
+	•	temporary files
+
+⸻
+
+.python-version
+
+Specifies the Python version used for the project to maintain environment compatibility.
+
+⸻
+
+📁 Overall Project Structure
+
+PlantCare-AI
+│
+├── app.py
+├── mobilenetv2_best.keras
+├── labels.txt
+├── requirements.txt
+│
+├── docs
+│   
+│
+├── static
+│   └── styles.css
+│
+├── templates
+│   ├── home.html
+│   ├── upload.html
+│   ├── result.html
+│   └── about.html
+│
+├── .gitignore
+└── .python-version
+
+
